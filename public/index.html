@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +8,44 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class="antialiased">
 
-    <div class="main">
+<body class="antialiased">
 
     <div class="border border-b-4 border-green-900 bg-green-500 pt-8">
         <h1 class="text-4xl text-center pb-8">Weather Dashboard</h1>
     </div>
 
-    <!-- side searchbar -->
-    <section class="border border-b-4">
-        <h1 class="text-3xl">City:</h1>
-        <form action=""></form>
+    <div class="relative min-h-screen flex">
 
-    </section>
 
-    <!-- searched city display -->
-    <section>
+        <!-- side searchbar -->
+        <div class="grid grid-rows-3 grid-flow-col gap-4">
+            <section class="row-span-3 border border-4 border-blue-900 bg-blue-500 w-96 ">
 
-    </section>
+                <h1 class="text-4xl">Search for a City:</h1>
+                <form class="mt-8 ml-8" action="">
+                    <input placeholder="city"type="text" id="city-name" name="fname" value=""><br>
 
-    <!-- 5-day Forecast cards -->
-    <section>
+                    <!-- <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                    <input type="submit" value="Submit"> -->
 
-    </section>
+                </form>
 
-</div>
+            </section>
 
+
+
+
+            <section class="col-span-2 border border-b-4 border-red-900 bg-red-500 w-screen">2
+
+            </section>
+            <section class="row-span-2 col-span-2 border border-b-4 border-purple-900 bg-purple-500 w-screen">3
+
+            </section>
+        </div>
 
 
 </body>
+
 </html>
