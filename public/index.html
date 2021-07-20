@@ -2,69 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Weather Dashboard</title>
 </head>
 
-<body class="antialiased">
+<body>
+  <header class="container-fluid text-center text-white bg-dark p-2">
+    <h1>Weather Dashboard</h1>
+  </header>
 
-    <div class="border border-b-4 border-green-900 bg-green-500 pt-8">
-        <h1 class="text-4xl text-center pb-8">Weather Dashboard</h1>
-    </div>
-
-    <div class="relative min-h-screen flex">
-
-
-        <div class="grid grid-rows-3 grid-flow-col gap-4">
-            <!-- side searchbar -->
-            <section class="row-span-3 border border-4 bg-gray-50  w-96 ">
-
-                <h1 class="text-4xl">Search for a City:</h1>
-                <form class="mt-8 ml-8" action="">
-                    <input type="text" placeholder="City"
-                    class="border border-gray-200 bg-gray-50 outline-none px-4 py-2 rounded-md hover:border-gray-400 focus:border-gray-400" /> 
-                    <ion-icon class="text-4xl bg-blue-700 rounded hover:bg-purple-700  text-white absolute mx-2 shadow-xl" name="search-outline"></ion-icon>
-                </form>
-                <div class="cities-searched mt-8 mx-8 space-y-4 border ">
-                    <h1 class="border">example</h1>
-                    <h1 class="border">example2</h1>
-                    <h1>example3</h1>
-                    <h1>example4</h1>
-                </div>
-            </section>
-
-
-            <section class="col-span-2 border border-b-4 border-red-900 bg-gray-200 w-screen space-y-2 mt-8">
-                <h1 class="city-display text-4xl">City goes here</h1>
-                <h2>Temperature:</h2>
-                <h2>Humidity:</h2>
-                <h2>Wind Speed:</h2>
-                <h2>UV Index:</h2>
-
-            </section>
-
-            <section class="row-span-2 col-span-2 border border-b-4 border-purple-900 space-y-4 bg-gray-300 w-screen">
-                <h1 class="text-3xl">5-Day Forecast</h1>
-
-                <div class="grid grid-cols-5">
-                    <div>1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quis, cupiditate delectus id officia nobis!</div>
-                    <div>1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quis, cupiditate delectus id officia nobis!</div>
-                    <div>1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quis, cupiditate delectus id officia nobis!</div>
-                    <div>1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quis, cupiditate delectus id officia nobis!</div>
-                    <div>1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quis, cupiditate delectus id officia nobis!</div>
-                  </div>
-
-
-
-            </section>
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-lg-3 bg-light">
+        <h5 class="mt-1">Search for a City:</h5>
+        <div class="form-inline form-group">
+          <input class="form-control" type="text" id="search-value" />
+          <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
         </div>
 
+        <ul class="list-group history"></ul>
+      </aside>
 
+      <div class="col-lg-9">
+        <div id="today" class="mt-3"></div>
+        <div id="forecast" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
