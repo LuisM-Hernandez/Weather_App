@@ -56,7 +56,7 @@ $(document).ready(function () {
                     // const element = array[i];
                     console.log(day+i);
                    var date =  $(day+i).text(moment().add(i, 'days').format('l'));
-                   var icon = $("<img>").text(dayList[1].weather[0].icon)
+                   var icon = $("<img>").attr("src", "http://openweathermap.org/img/wn/" + dayList[i].weather[0].icon + "@2x.png")
                    var temp =  $("<p>").text("Temp: " + dayList[i].main.temp);
                    var humidity = $("<p>").text("Humidity: " + dayList[i].main.humidity);
                    console.log(dayList[1].main.temp);
