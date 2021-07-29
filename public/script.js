@@ -38,51 +38,32 @@ $(document).ready(function () {
                 method:"GET"
             }).then(function (data) {
                 console.log(data.list);
-
+                
                 var dayList = data.list
+                console.log(dayList[1].weather[0].icon)
+                var day = "#day"
 
-                var day1 = $("#day1").text(moment().add(1, 'days').format('l'))
-                var day2 = $("#day2").text(moment().add(2, 'days').format('l'))
-                var day3 = $("#day3").text(moment().add(3, 'days').format('l'))
-                var day4 =$("#day4").text(moment().add(4, 'days').format('l'))
-                var day5 =$("#day5").text(moment().add(5, 'days').format('l'))
+                // var day1 = $("#day1").text(moment().add(1, 'days').format('l'))
+                // var day2 = $("#day2").text(moment().add(2, 'days').format('l'))
+                // var day3 = $("#day3").text(moment().add(3, 'days').format('l'))
+                // var day4 =$("#day4").text(moment().add(4, 'days').format('l'))
+                // var day5 =$("#day5").text(moment().add(5, 'days').format('l'))
 
-                $("<p>").appendTo(day1).text("Temp: " + dayList[1].main.temp)
-                $("<p>").appendTo(day1).text("Humidity: " + dayList[1].main.humidity)
+                // $("<p>").appendTo(day1).text("Temp: " + dayList[1].main.temp)
+                // $("<p>").appendTo(day1).text("Humidity: " + dayList[1].main.humidity)
 
+                for (let i = 1; i < 6; i++) {
+                    // const element = array[i];
+                    console.log(day+i);
+                   var date =  $(day+i).text(moment().add(i, 'days').format('l'));
+                   var icon = $("<img>").text(dayList[1].weather[0].icon)
+                   var temp =  $("<p>").text("Temp: " + dayList[i].main.temp);
+                   var humidity = $("<p>").text("Humidity: " + dayList[i].main.humidity);
+                   console.log(dayList[1].main.temp);
 
+                   $(date).append(icon).append(temp).append(humidity)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                // var weekForecast = data.list;
-                // var weekDiv = $("<div>").addClass("col forecast bg-primary text-white ml-3 mb-3 rounded")
-                // $(weekDiv).appendTo(".daycolumns").text("hello")
-                // $("#day1").text(moment().add(1,"days").format("MM/DD/YY"));
-                // $("<img>").attr("src", "http://openweathermap.org/img/wn/" + fiveDays.list[0].weather[0].icon + "@2x.png").appendTo("#day1");
-                // $("<div>").text("Temperature: "+ fiveDays.list[0].main.temp + " °F").appendTo("#day1");
-                // $("<div>").text("Humidity: "+ fiveDays.list[0].main.humidity + "%").appendTo("#day1");
-
-                // for (let i = 0; i < 5; i++) {
-                //     const element = weekForecast[i];
-                //     console.log(element);
-                // }
-                               
+                }
             })
         }
     });
